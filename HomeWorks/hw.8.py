@@ -1,3 +1,7 @@
+import os
+cur_path = os.path.dirname(__file__)
+os.chdir(cur_path)
+
 # Задание 1. Сумма чисел
 
 # Во входном файле numbers.txt записано N целых чисел, которые могут быть
@@ -35,6 +39,25 @@
 # Закрытие файла с помощью метода close() после завершения его использования
 # предотвращает утечку ресурсов и обеспечивает корректное завершение работы с
 # файлом.
+
+#Моё решение
+
+with open('numbers.txt', 'w', encoding='utf-8') as f:
+            numbers_in_file = (2, 2, 2, 2, 2)
+            for i in numbers_in_file:
+                    f.write(f"{i}\n")
+
+sum_number = 0
+numbers_file = open("numbers.txt", "r", encoding="utf-8")
+for line in numbers_file:
+        numbers = [int(num) for num in line.split() if num]
+        sum_number+=sum(numbers)
+numbers_file.close()
+        
+
+sum_file = open("answer.txt", "w", encoding="utf-8")
+sum_file.write(str(sum_number))
+sum_file.close()
 
 # Эталонное решение:
 
