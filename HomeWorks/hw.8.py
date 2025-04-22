@@ -42,22 +42,22 @@ os.chdir(cur_path)
 
 #Моё решение
 
-with open('numbers.txt', 'w', encoding='utf-8') as f:
-            numbers_in_file = (2, 2, 2, 2, 2)
-            for i in numbers_in_file:
-                    f.write(f"{i}\n")
+# with open('numbers.txt', 'w', encoding='utf-8') as f:
+#             numbers_in_file = (2, 2, 2, 2, 2)
+#             for i in numbers_in_file:
+#                     f.write(f"{i}\n")
 
-sum_number = 0
-numbers_file = open("numbers.txt", "r", encoding="utf-8")
-for line in numbers_file:
-        numbers = [int(num) for num in line.split() if num]
-        sum_number+=sum(numbers)
-numbers_file.close()
+# sum_number = 0
+# numbers_file = open("numbers.txt", "r", encoding="utf-8")
+# for line in numbers_file:
+#         numbers = [int(num) for num in line.split() if num]
+#         sum_number+=sum(numbers)
+# numbers_file.close()
         
 
-sum_file = open("answer.txt", "w", encoding="utf-8")
-sum_file.write(str(sum_number))
-sum_file.close()
+# sum_file = open("answer.txt", "w", encoding="utf-8")
+# sum_file.write(str(sum_number))
+# sum_file.close()
 
 # Эталонное решение:
 
@@ -92,6 +92,7 @@ sum_file.close()
 
 
 # Задание 2. Сумма чисел
+
 # В файле zen.txt хранится так называемый Дзен Пайтона — текст философии
 # программирования на языке Python. Выглядит он так:
 
@@ -156,10 +157,10 @@ sum_file.close()
 # # Закрываем файл после чтения
 # philosophical_text.close()
 
-# # Проходим по строкам в обратном порядке и выводим каждую строку без
-# символа новой строки в конце
+# # Проходим по строкам в обратном порядке и выводим каждую строку без символа новой строки в конце
+
 # for line in reversed(lines):
-# print(line.strip())
+#     print(line.strip())
 
 # Задача 3. Турнир
 # В файле first_tour.txt записано число K и данные об участниках турнира по
@@ -222,55 +223,58 @@ sum_file.close()
 
 # Эталонное решение:
 
-# # Открываем файл first_tour.txt для чтения
+# Открываем файл first_tour.txt для чтения
 
 # with open("first_tour.txt", "r") as file:
-# lines = file.readlines()
+#     lines = file.readlines()
 
 # # Первая строка содержит число K
-# K = int(lines[0])
+#     K = int(lines[0])
 
 # # Словарь для хранения данных участников
-# participants = {}
+#     participants = {}
 
 # # Словарь для хранения участников, прошедших во второй тур
-# filter_player = {}
-# count = 1
+#     filter_player = {}
+#     count = 1
 
 # # Обрабатываем оставшиеся строки
 # for line in lines[1:]:
 
 # # Разделяем строку на части
-# data = line.strip().split()
+#     data = line.strip().split()
+
 
 # # Формируем имя участника с инициалом
-# name = f"{data[1][0]}. {data[0]}"
+#     name = f"{data[1][0]}. {data[0]}"
 
 # # Получаем количество баллов
-# score = int(data[-1])
+
+#     score = int(data[-1])
 
 # # Сохраняем участника и его баллы
-# participants[name] = score
+#     participants[name] = score
 
 # # Фильтруем участников, набравших более K баллов
+
 # for player, score in participants.items():
-# if score > K:
-# filter_player[player] = score
+#     if score > K:
+#         filter_player[player] = score
+
 
 # # Сортируем участников по убыванию баллов
-# sorted_filter_player = dict(sorted(filter_player.items(), key=lambda
-# x: x[1], reverse=True))
+# sorted_filter_player = dict(sorted(filter_player.items(), key=lambda x: x[1], reverse=True))
 
 # # Открываем файл second_tour.txt для записи
 # with open("second_tour.txt", "w") as file:
 
 # # Записываем количество участников второго тура
-# file.write(f"{len(sorted_filter_player)}\n")
+#     file.write(f"{len(sorted_filter_player)}\n")
 
 # # Записываем данные участников с нумерацией
-# for player, score in sorted_filter_player.items():
-# file.write(f"{count}) {player} {score}\n")
-# count += 1
+#     for player, score in sorted_filter_player.items():
+#         file.write(f"{count}) {player} {score}\n")
+#         count += 1
 
 
 # Задача 4. Частотный анализ
@@ -342,30 +346,27 @@ sum_file.close()
 
 # # Открываем файл text.txt и считываем текст
 # with open("text.txt", "r") as file:
-# text = file.read().lower() # Приводим текст к нижнему регистру
+#   text = file.read().lower() # Приводим текст к нижнему регистру
 
 # # Создаем словарь для подсчета количества каждой буквы
 # letter_count = {letter: 0 for letter in english_alphabet}
 
 # # Подсчитываем количество вхождений каждой буквы
 # for char in text:
-# if char in english_alphabet:
-# letter_count[char] += 1
-# total_letters += 1
+#   if char in english_alphabet:
+#       letter_count[char] += 1
+#       total_letters += 1
 
 # # Вычисляем частоту встречаемости каждой буквы
-# letter_freq = {letter: (count / total_letters) for letter, count in
-# letter_count.items() if count > 0}
+# letter_freq = {letter: (count / total_letters) for letter, count in letter_count.items() if count > 0}
 
-# # Сортируем буквы по убыванию частоты и по алфавиту при равенстве
-# частоты
-# sorted_letters = sorted(letter_freq.items(), key=lambda x: (-x[1],
-# x[0]))
+# # Сортируем буквы по убыванию частоты и по алфавиту при равенстве частоты
+# sorted_letters = sorted(letter_freq.items(), key=lambda x: (-x[1], x[0]))
 
 # # Записываем результат в файл analysis.txt
 # with open("analysis.txt", "w") as file:
-# for letter, freq in sorted_letters:
-# file.write(f"{letter} {freq:.3f}\n")
+#   for letter, freq in sorted_letters:
+#       file.write(f"{letter} {freq:.3f}\n")
 
 
 # Задача 5*. «Война и мир»
@@ -415,31 +416,28 @@ sum_file.close()
 # # Открываем архив и ищем текстовый файл
 # with zipfile.ZipFile("voina-i-mir.zip", "r") as zip_ref:
 
-# # Получаем список файлов в архиве и выбираем первый текстовый
-# файл
-# file_name = [name for name in zip_ref.namelist() if
-# name.endswith('.txt')][0]
+# # Получаем список файлов в архиве и выбираем первый текстовый файл
+#   file_name = [name for name in zip_ref.namelist() if name.endswith('.txt')][0]
 # # Открываем выбранный файл и читаем его содержимое
-# with zip_ref.open(file_name) as file:
-# text = file.read().decode('utf-8')
+#   with zip_ref.open(file_name) as file:
+#       text = file.read().decode('utf-8')
 
 # # Инициализируем словарь для подсчета количества символов
 # char_count = {}
 
 # # Подсчитываем количество вхождений каждого символа
 # for char in text:
-# if char.isalpha(): # Учитываем только буквы
-# if char in char_count:
-# char_count[char] += 1
-# else:
-# char_count[char] = 1
+#   if char.isalpha(): # Учитываем только буквы
+#       if char in char_count:
+#           char_count[char] += 1
+#   else:
+#       char_count[char] = 1
 
 # # Сортируем символы по частоте (в убывании) и по алфавиту при
 # равенстве частоты
-# sorted_chars = sorted(char_count.items(), key=lambda x: (-x[1],
-# x[0]))
+# sorted_chars = sorted(char_count.items(), key=lambda x: (-x[1],x[0]))
 
 # # Записываем результаты в файл
 # with open("statistik.txt", "w", encoding="utf-8") as file:
-# for char, freq in sorted_chars:
-# file.write(f"{char}: {freq}\n")
+#   for char, freq in sorted_chars:
+#       file.write(f"{char}: {freq}\n")
