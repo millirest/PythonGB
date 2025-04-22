@@ -1,4 +1,8 @@
+import os
 from data_create import name_data, surname_data, phone_data, address_data
+
+cur_path = os.path.dirname(__file__)
+print(cur_path)
 
 def input_data():
     name = name_data()
@@ -16,16 +20,16 @@ def input_data():
         var = int(input('Введите число:\n'))
 
     if var == 1:
-        with open('data_first_variants.csv', 'a', encoding='utf-8') as f:
+        with open(cur_path+'\\data_first_variants.csv', 'a', encoding='utf-8') as f:
             f.write(f"{name}\n{surname}\n{phone}\n{adress}\n\n")
 
     if var == 2:
-        with open('data_second_variants.csv', 'a', encoding='utf-8') as f:
+        with open(cur_path+'\\data_second_variants.csv', 'a', encoding='utf-8') as f:
             f.write(f"{name}; {surname}; {phone}; {adress}\n\n")
 
 def print_data():
     print("Вывожу данные из 1 файла: \n")
-    with open('data_first_variants.csv', 'r', encoding='utf-8') as f:
+    with open(cur_path+'\\data_first_variants.csv', 'r', encoding='utf-8') as f:
         data_first = f.readlines()
         data_first_list = []
         j = 0
@@ -36,6 +40,6 @@ def print_data():
         print(''.join(data_first_list))
         
     print("Вывожу данные из 2 файла: \n")
-    with open('data_second_variants.csv', 'r', encoding='utf-8') as f:
+    with open(cur_path+'\\data_second_variants.csv', 'r', encoding='utf-8') as f:
         data_second = f.readlines()
         print(*data_second)
