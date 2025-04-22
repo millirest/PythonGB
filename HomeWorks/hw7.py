@@ -139,18 +139,21 @@
 # functools.
 
 #Моё решение
-from functools import reduce
 
-floats = [12.3554, 4.02, 5.777, 2.12, 3.13, 4.44, 11.0001]
-names = ["Vanes", "Alen", "Jana", "William", "Richards", "Joy"]
-numbers = [22, 33, 10, 6894, 11, 2, 1]
+# from functools import reduce
 
-NewFloats = list(map(lambda x: round(x**3,3) ,floats))
-print(NewFloats)
-NewNames = list(filter(lambda name: len(name)>5, names))
-print(NewNames)
-newNambers= reduce(lambda x, y: x*y, numbers)
-print(newNambers)
+# floats = [12.3554, 4.02, 5.777, 2.12, 3.13, 4.44, 11.0001]
+# names = ["Vanes", "Alen", "Jana", "William", "Richards", "Joy"]
+# numbers = [22, 33, 10, 6894, 11, 2, 1]
+
+# NewFloats = list(map(lambda x: round(x**3,3) ,floats))
+# print(NewFloats)
+# NewNames = list(filter(lambda name: len(name)>5, names))
+# print(NewNames)
+# newNambers= reduce(lambda x, y: x*y, numbers)
+# print(newNambers)
+
+
 # Эталонное решение:
 
 # from functools import reduce
@@ -161,15 +164,12 @@ print(newNambers)
 # numbers = [22, 33, 10, 6894, 11, 2, 1]
 
 # # Применяем функцию map для возведения в третью степень и округления до трех знаков после запятой
-
 # map_result = list(map(lambda x: round(x ** 3, 3), floats))
 
 # # Применяем функцию filter для выбора имен из пяти и более букв
-
 # filter_result = list(filter(lambda name: len(name) >= 5, names))
 
 # # Применяем функцию reduce для нахождения произведения всех чисел в списке
-
 # reduce_result = reduce(lambda num1, num2: num1 * num2, numbers)
 
 # # # Вывод результатов
@@ -212,19 +212,23 @@ print(newNambers)
 # Приведите результат работы map к списку с помощью функции list(). Это
 # преобразует объект map в список, содержащий кортежи.
 
+#Моё решение
+
+
+
 # Эталонное решение:
 
-# from typing import List, Tuple
+from typing import List, Tuple
 
-# # Исходные списки
-# strings = ['a', 'b', 'c', 'd', 'e']
-# numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+# Исходные списки
+strings = ['a', 'b', 'c', 'd', 'e']
+numbers = [1, 2, 3, 4, 5, 6, 7, 8]
 
-# # Создание списка кортежей, состоящих из пар элементов из обоих списков
-# results: List[Tuple[str, int]] = list(map(lambda x, y: (x, y), strings, numbers))
+# Создание списка кортежей, состоящих из пар элементов из обоих списков
+results: List[Tuple[str, int]] = list(map(lambda x, y: (x, y), strings, numbers))
 
-# # Вывод результатов
-# print(results)
+# Вывод результатов
+print(results)
 
 
 
