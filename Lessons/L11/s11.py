@@ -23,10 +23,11 @@
 
 # Задача 3
 
-def same_by(characteristic, object):
+def same_by(characteristic, object):   # ХАрактеристика, обьект 
     result = True
     list1 = [characteristic(x) for x in object]
-    for i in range(len(list1)-1):
+   # print(list1) # Проверка
+    for i in range(len(list1)-1): # Проверка одинаковости
         if list1[i] != list1[i+1]:
             result = False
     return result
